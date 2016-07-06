@@ -1,5 +1,7 @@
 ---
 title: 相当好用的markdown编辑器 - Typora
+categories: hexo
+tags: [hexo,markdown]
 ---
 
 # 目前博客的架构

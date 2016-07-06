@@ -1,5 +1,7 @@
 ---
 title: 制作hexo博客
+categories: hexo
+tags: hexo
 ---
 More info：[hexo 官方文档](https://hexo.io/docs/index.html)
 

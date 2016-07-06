@@ -1,5 +1,7 @@
 ---
 title: shell脚本：去除指定的后缀名称
+categories: shell
+tags: [linux,shell]
 ---
 # 需求来由
 &emsp;&emsp;跟运维朋友聊天，聊到一个问题，我们经常会使用"cmd | xargs -i mv {} {}.xxx"来批量修改文件名称，有时候会不小心加多一次，本来想要"test.txt.bak"的效果，结果却成了"test.txt.bak.bak..."，所以才有了下面这个脚本。
