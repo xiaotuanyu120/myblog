@@ -8,7 +8,6 @@ tags: [blog,hexo]
 ``` bash
 $ hexo n "test"
 INFO  Created: /data/web/hexo_blog/source/_posts/test.md
-<!--more-->
 ## 文件内容是从scaffolds/post.md模版中来的
 $ cat /data/web/hexo_blog/source/_posts/test.md
 ---
@@ -26,6 +25,7 @@ categories:
 tags:
 ---
 ```
+<!--more-->
 
 ## 设置分类列表
 &emsp;&emsp;在我们编辑文章分类时，编写的<code>categories:</code>内容会包含到我们的访问路径中去。

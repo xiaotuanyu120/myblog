@@ -1,5 +1,6 @@
 ---
 title: 相当好用的markdown编辑器 - Typora
+date: 2016-07-05 12:00:00
 categories: hexo
 tags: [hexo,markdown]
 ---

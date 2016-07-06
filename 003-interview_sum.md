@@ -1,5 +1,6 @@
 ---
 title: Garena面试经历
+date: 2016-07-05 14:03:00
 categories: other
 tags: interview
 ---

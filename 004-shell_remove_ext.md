@@ -1,5 +1,6 @@
 ---
 title: shell脚本：去除指定的后缀名称
+date: 2016-07-05 16:00:00
 categories: shell
 tags: [linux,shell]
 ---

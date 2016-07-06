@@ -1,5 +1,6 @@
 ---
 title: 制作hexo博客
+date: 2016-07-05 11:02:00
 categories: hexo
 tags: hexo
 ---
