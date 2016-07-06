@@ -6,7 +6,7 @@ tags: [hexo,duoshuo]
 ---
 参考链接：[next主题-多说功能](http://theme-next.iissnan.com/third-party-services.html)
 
-# next主题启用多说功能
+## next主题启用多说功能
 1. NexT 支持 多说 和 DISQUS 评论系统。 当同时设置了 多说 和 DISQUS 时，优先选择多说。 NexT 内置了一套 多说 的样式。
    <!--more-->
 2. 访问[多说](http://duoshuo.com/)登录后在首页选择 “我要安装”。

@@ -4,15 +4,15 @@ date: 2016-07-05 16:00:00
 categories: shell
 tags: [linux,shell]
 ---
-# 需求来由
+## 需求来由
 &emsp;&emsp;跟运维朋友聊天，聊到一个问题，我们经常会使用"cmd | xargs -i mv {} {}.xxx"来批量修改文件名称，有时候会不小心加多一次，本来想要"test.txt.bak"的效果，结果却成了"test.txt.bak.bak..."，所以才有了下面这个脚本。
 <!--more-->
-## 用法与功能：
+### 用法与功能：
 + 用法 - "脚本 目录/文件 要去除的后缀名称(例如bak)"
 + 对象可以是目录也可以是文件
 + 文件拥有多个连续后缀名时，所有和指定后缀名匹配的后缀都会被清除
 
-# 脚本内容
+## 脚本内容
 ``` bash
 #!/bin/bash
 ## remove the designated extension from file's name
@@ -51,7 +51,7 @@ else
 fi
 ```
 
-# 脚本讲解
+## 脚本讲解
 + “grep -o”，-o参数会将匹配到的字符串单独按照行输出
 ``` bash
 # grep -o "o" <<< "school"
