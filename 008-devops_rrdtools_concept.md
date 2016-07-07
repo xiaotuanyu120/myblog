@@ -1,8 +1,8 @@
 ---
-title: rrdtools初识
+title: rrdtool初识
 date: 2016-07-06 19:26:00
 categories: devops
-tags: [devops,rrdtools]
+tags: [devops,rrdtool]
 ---
 ## RRDtool是什么？
 &emsp;&emsp;RRDtool是一个使用GNU认证的数据库软件。
