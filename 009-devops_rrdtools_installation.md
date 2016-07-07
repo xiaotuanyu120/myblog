@@ -1,5 +1,5 @@
 ---
-title: RRDtool初探
+title: RRDtool初探-安装
 date: 2016-0706 20:55:00
 categories: devops
 tags: [devops,rrdtool]
@@ -27,7 +27,7 @@ vim /etc/profile
     ********************************
 source /etc/profile
 ```
-
+<!--more-->
 ### pip安装
 ``` bash
 wget https://bootstrap.pypa.io/get-pip.py
