@@ -47,8 +47,7 @@ rrd = rrdtool.create(
 if rrd:
     print rrdtool.error()
 ```
-PS:
-* rrd若成功，返回NONE，bool值为假，不打印；若失败，返回值非空，bool值为真，则打印错误。
+PS: rrd若成功，返回NONE，bool值为假，不打印；若失败，返回值非空，bool值为真，则打印错误。
 
 
 ## 创建update.py，更新数据
