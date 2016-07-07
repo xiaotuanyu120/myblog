@@ -10,23 +10,35 @@ create filename [--start|-b start time] [--step|-s step]\
 [DS:ds-name:DST:heartbeat:min:max]\
 [RRA:CF:xff:steps:rows]
 ```
-<!--more-->
 * filename - 创建的rrdtool数据库文件，默认后缀是.rrd；
+
 * --start - 指定rrdtool第一条记录的起始时间，必须是timestamp格式；
+
 * --step - 指定rrdtool接受数据的基础间隔时间，默认300s；
+
 * DS:ds-name - 用于定义data source，DS是固定标识，ds-name是该数据源的变量名称；
+
+  <!--more-->
+
 * DST - 用于定义数据源的类型，包括：
   &emsp;&emsp;COUNTER，递增类型，用差值除以时间间隔，储存该值
   &emsp;&emsp;DERIVE，可递增可递减类型，用差值除以时间间隔，储存该值
   &emsp;&emsp;ABSOLUTE，假定前一个时间点的值是0，用差值除以时间间隔，储存该值
   &emsp;&emsp;GAUGE，储存实测数值
   &emsp;&emsp;[更详细介绍](http://www.jianshu.com/p/b925b1584ab2)
+
 * heartbeat - 心跳值，定义了两个数据库updates之间的最大间隔时间，超过的话储存unknown，未超过时取前后等时间段内的平均值，例如600，未超过时取前300和后300的平均值；
+
 * min:max - 分别是最小值，最大值，超出此范围储存unknown；
+
 * RRA - 定义了一个存档，相当于一个表，保存不同间隔的统计结果数据；
+
 * CF - (consolidation function)统计合并数据，包括AVERAGE,MAX,MIN,LAST(最新值)；
+
 * xff - 定义一个0-1之间的数值，被赋值为UNKNOW的PDP(基本数据点)除以CDP(合并数据点)大于等于此值，则储存为UNKNOW；
+
 * steps - 定义多少个PDP用来构建CDP；
+
 * rows - 定义在一个RRA存档中保留多少次生成的数据；
   对于steps和rows可用后缀代替纯数字，s (seconds), m (minutes), h (hours), d (days), w (weeks), M (months), 和 y (years)。
 
