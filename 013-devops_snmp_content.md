@@ -12,11 +12,16 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 
 * SNMP version 1:
 > * the oldest flavor.
+>
 > * Easy to set up – only requires a plaintext community.
 >
 >   `downsides`
+>
 > * it does not support 64 bit counters, only 32 bit counters
+>
 > * it has little security.
+
+
 
 * SNMP version 2c:
 > * v2c is identical to version 1, except it adds support for 64 bit counters.
@@ -24,6 +29,8 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 >
 >   `downsides`
 > * no
+
+
 
 * SNMP version 3:
 > * adds security to the 64 bit counters.
@@ -41,8 +48,12 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 > > * Sets variables in agents
 > > * Acknowledges asynchronous events from agents
 
+
+
 * Managed devices
 > A managed device or the network element is a part of the network that requires some form of monitoring and management e.g. routers, switches, servers, workstations, printers, UPSs, etc...
+
+
 
 * SNMP agent
 > The agent is a program that is packaged within the network element. Enabling the agent allows it to collect the management information database from the device locally and makes it available to the SNMP manager, when it is queried for. These agents could be standard (e.g. Net-SNMP) or specific to a vendor (e.g. HP insight agent)
@@ -52,8 +63,12 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 > > * Signals an event to the manager.
 > > * Acts as a proxy for some non–SNMP manageable network node.
 >
+> 
+>
 > Basic SNMP Communication Diagram
 > ![SNMP Communication Diagram](http://blog.xiao5tech.com/uploads/013-devops-snmp-content-01.gif)
+
+
 
 * Management Information Database Otherwise called as Management Information Base (MIB)
 > Every SNMP agent maintains an information database describing the managed device parameters. The SNMP manager uses this database to request the agent for specific information and further translates the information as needed for the Network Management System (NMS). This commonly shared database between the Agent and the Manager is called Management Information Base (MIB).
@@ -61,7 +76,10 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 > Typically these MIB contains standard set of statistical and control values defined for hardware nodes on a network. SNMP also allows the extension of these standard values with values specific to a particular agent through the use of private MIBs.
 > In short, MIB files are the set of questions that a SNMP Manager can ask the agent. Agent collects these data locally and stores it, as defined in the MIB. So, the SNMP Manager should be aware of these standard and private questions for every type of agent.
 
+
+
 ## 什么是oid和mid？
+
 
 * MIB structure and Object Identifier (Object ID or OID)
 > Management Information Base (MIB) is a collection of Information for managing network element. The MIBs comprises of managed objects identified by the name Object Identifier (Object ID or OID).
@@ -88,16 +106,20 @@ Simple Network Management Protocol (SNMP) is a popular protocol for network mana
 > * INFORM: This command is similar to the TRAP initiated by the Agent, additionally INFORM includes confirmation from the SNMP manager on receiving the message.
 > * RESPONSE: It is the command used to carry back the value(s) or signal of actions directed by the SNMP Manager.
 
+
 * Typical SNMP communication
 > Being the part of TCP⁄ IP protocol suite, the SNMP messages are wrapped as User Datagram Protocol (UDP) and intern wrapped and transmitted in the Internet Protocol. 
 > The following diagram will illustrate the four–layer model developed by Department of Defense (DoD).
 > ![four–layer model](http://blog.xiao5tech.com/uploads/013-devops-snmp-content-03.gif)
 
+
 * GET⁄ GET NEXT⁄ GET BULK⁄ SET
   ![four–layer model](http://blog.xiao5tech.com/uploads/013-devops-snmp-content-04.gif)
 
+
 * TRAP
   ![four–layer model](http://blog.xiao5tech.com/uploads/013-devops-snmp-content-05.gif)
+
 
 * INFORM
   ![four–layer model](http://blog.xiao5tech.com/uploads/013-devops-snmp-content-06.gif)
