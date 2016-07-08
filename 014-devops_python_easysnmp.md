@@ -10,7 +10,8 @@ tags: [devops,python,snmp]
 ## easysnmp的特点
 * 传统的net-snmp很优秀，但是太不python和缺少合适的unit去测试和文档化；
 * [PySNMP](http://pysnmp.sourceforge.net/)是用纯净的python创造的，然而它有很大的性能问题。easysnmp大概是其的4倍速度；
-<!--more-->
+  <!--more-->
+
 ## 安装easysnmp
 
 ### 安装环境底包
