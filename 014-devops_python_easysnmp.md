@@ -27,7 +27,8 @@ cd net-snmp-5.7.3
 
 ./configure
 # configure的过程中会有几次交互，默认或者按照自己情况配置即可
-
+make
+make install
 ```
 
 ### 安装easysnmp
