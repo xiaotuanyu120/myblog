@@ -6,10 +6,11 @@ tags: [devops,python,json,cpu]
 ---
 ## 监控cpu状态脚本
 
-### 脚本目标：
+### 脚本目标
 * 监控cpu状态
 * 输出json结果
-<!--more-->
+  <!--more-->
+
 ### 脚本内容
 ``` python
 #!/root/env26/bin/python
