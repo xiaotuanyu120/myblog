@@ -81,49 +81,47 @@ if __name__ == '__main__':
 * request.data，但此种方法有限制，按照官方说法(Contains the incoming request data as string in case it came with a mimetype Flask does not handle.)，按照字面意思，只有特定的mimetype下，request.data才能拿到请求的值，一般情况下都是none;
 > 一般需要对代码进行如下处理
 > ``` python
-> # 客户端
-> def json_post(url, sysinfo_list, header):
->     jdata = json.dumps(sysinfo_list)
->     req = urllib2.Request(url, jdata, headers=header)
->     response = urllib2.urlopen(req)
->     return response.read()
->
-> # if块中，自定义header并传入到urllib2.Request()的headers参数中
->         headers = {
->     'Content-type': 'binary/octet-stream',
-> }
->         json_post(url, result, header=headers)
-> ```
-> 
-> ``` python
-> # 服务端
-> data = request.data
-> return "request: " + str(data)
-> ```
+# 客户端
+def json_post(url, sysinfo_list, header):
+    jdata = json.dumps(sysinfo_list)
+    req = urllib2.Request(url, jdata, headers=header)
+    response = urllib2.urlopen(req)
+    return response.read()
+
+# if块中，自定义header并传入到urllib2.Request()的headers参数中
+        headers = {
+    'Content-type': 'binary/octet-stream',
+}
+        json_post(url, result, header=headers)
+
+
+# 服务端
+data = request.data
+return "request: " + str(data)
+```
 
 
 * get_json()，在"mimetype"是"application/json"或force参数是True时，才会拿到请求字符串的值
 > ``` python
-> # 客户端
-> def json_post(url, sysinfo_list, header):
->     jdata = json.dumps(sysinfo_list)
->     req = urllib2.Request(url, jdata, headers=header)
->     response = urllib2.urlopen(req)
->     return response.read()
->
-> # if块中，自定义header传入到urllib2.Request()的headers参数中
->         headers = {
->     'Content-type': 'application/json',
-> }
->
->         json_post(url, result, header=headers)
-> ```
-> 
-> ``` python
-> # 服务端
->     data = request.get_json()
->     return "request: " + str(data)
-> ```
+# 客户端
+def json_post(url, sysinfo_list, header):
+    jdata = json.dumps(sysinfo_list)
+    req = urllib2.Request(url, jdata, headers=header)
+    response = urllib2.urlopen(req)
+    return response.read()
+
+# if块中，自定义header传入到urllib2.Request()的headers参数中
+        headers = {
+    'Content-type': 'application/json',
+}
+
+        json_post(url, result, header=headers)
+
+
+# 服务端
+    data = request.get_json()
+    return "request: " + str(data)
+```
 
 
 * get_data()，此方法可以完全的拿到请求，但需要注意的是，调用此请求的时候要检查请求内容的长度，不然有一定风险引起内存问题
