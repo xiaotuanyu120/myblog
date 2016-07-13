@@ -94,7 +94,7 @@ if __name__ == '__main__':
 > }
 >         json_post(url, result, header=headers)
 > ```
->
+> 
 > ``` python
 > # 服务端
 > data = request.data
@@ -118,7 +118,7 @@ if __name__ == '__main__':
 >
 >         json_post(url, result, header=headers)
 > ```
->
+> 
 > ``` python
 > # 服务端
 >     data = request.get_json()
