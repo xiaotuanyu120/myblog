@@ -10,6 +10,8 @@ import socket
 ```
 > socket模块提供了socket操作和相关功能
 
+<!--more-->
+
 ``` python
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 ```
@@ -18,13 +20,13 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 > * socket.AF_UNIX
 > * socket.AF_INET (默认)
 > * socket.AF_INET6
-> 指定了连接的地址和协议族
-> 
+>   指定了连接的地址和协议族
+>
 > 第二个参数：
 > * socket.SOCK_STREAM (默认)
 > * socket.SOCK_DGRAM
 > * 其他几种基本没用
-> 指定了连接的类型
+>   指定了连接的类型
 
 ``` python
 s.connect(("8.8.8.8", 80))
