@@ -47,9 +47,14 @@ s.close()
 ## 本机ip地址获取，实际应用写法
 ``` python
 import socket
+import sys
 
 
 def get_ip():
-    ip = [(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
+    try:
+        ip = [(s.connect(('8.8.8.8', 80)), s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1]
+    except:
+        e = sys.exc_info()[0]
+        return
     return ip
 ```
