@@ -74,7 +74,7 @@ u'this is a string'
 ...         return [_encode_it(x) for x in data]
 ...     elif isinstance(data, dict):
 ...         return dict([(_encode_it(key), _encode_it(value)) for key, value in data.iteritems()])
-...     return data_handle
+...     return data
 ...
 
 # 创建一个复杂的dict嵌套测试
@@ -90,4 +90,10 @@ u'this is a string'
 <type 'str'>
 >>> type(jd.keys()[0])
 <type 'unicode'>
+```
+函数中的dict return部分，在python3中可以这样写
+``` python
+return {
+    _encode_it(key): _encode_it(value) for key, value in data.iteritems()
+}
 ```
