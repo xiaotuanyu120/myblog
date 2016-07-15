@@ -1,8 +1,8 @@
 ---
 title: Hexo的分类和标签设置
 date: 2016-07-06 08:33:00
-categories: blog
-tags: [blog,hexo]
+categories: hexo
+tags: [hexo]
 ---
 ## 新建页面命令
 ``` bash
