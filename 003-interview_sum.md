@@ -1,8 +1,9 @@
 ---
 title: Garena面试经历
 date: 2016-07-05 14:03:00
-categories: other
-tags: interview
+categories: interview
+tags: [interview,python]
+
 ---
 ## 面试经历
 &emsp;&emsp;面试公司Garena是新加坡一家游戏代理公司，最近几年发展的很不错，提供的职位是游戏数据平台的运维开发，面试一共分4轮，前3轮是技术面试，最后一轮是技术团队总监面试。
