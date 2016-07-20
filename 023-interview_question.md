@@ -28,6 +28,7 @@ tags: [interview,ha,dns,http,lvs]
 > 
 > Willy Received on 2010/03/25 22:38
 
+<!--more-->
 
 ## http协议的包头的构造
 > 引用来源： [**作业部落格里一个优秀解读**](https://www.zybuluo.com/yangfch3/note/167490)
