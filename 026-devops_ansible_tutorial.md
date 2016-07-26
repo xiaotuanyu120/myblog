@@ -1,6 +1,14 @@
+---
+title: ansible基础用法
+date: 2016-07-26 09:46:00
+categories: devops
+tags: [devops,ansible]
+
+---
+
 ## 一,安装
 
-
+``` bash
 # 安装ansible
 yum install epel-release
 yum install -y ansible libselinux-python
@@ -13,7 +21,7 @@ virtualenv venv -p /usr/local/py27/bin/python2.7
 
 # 安装ansible需要的python模块
 pip install paramiko PyYAML Jinja2 httplib2 six
-
+```
 
 <!--more-->
 
