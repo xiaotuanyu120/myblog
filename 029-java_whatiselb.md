@@ -1,8 +1,8 @@
 ---
 title: Jboss&J2EE中的ELB到底是什么？（转载）
 date: 2016-07-26 16:00:00
-categories: JAVA
-tags: [JAVA,Jboss,J2EE,ELB]
+categories: java
+tags: [java,jboss,j2ee,elb]
 
 ---
 
