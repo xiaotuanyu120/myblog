@@ -1,8 +1,8 @@
 ---
-title:
-date:
-categories:
-tags":
+title: 查看http连接及tcp连接状态
+date: 2016-07-26 16:01:00
+categories: http
+tags: [http,tcp]
 
 ---
 ## 查看http连接及其状态的原理
