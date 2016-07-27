@@ -14,6 +14,8 @@ tags: [interview]
 ### 什么是SQL？
 &emsp;&emsp;SQL是structured querry language的缩写，代表结构化查询语言。
 
+<!--more-->
+
 ### SQL的组成？
 **SQL分为四种主要的语句**
 - DML (Data Manipulation Language) - 数据操作语句
