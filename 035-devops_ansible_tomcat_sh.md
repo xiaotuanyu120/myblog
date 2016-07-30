@@ -6,6 +6,7 @@ tags: [devops,ansible,java]
 
 ---
 ## 脚本所需文件
+包括jre7u80、tomcat8.5、主要安装脚本、java环境脚本
 ``` bash
 tree
 .
@@ -14,12 +15,12 @@ tree
 ├── java-env-7u80.sh
 └── jre-7u80-linux-x64.tar.gz
 ```
-包括jre7u80、tomcat8.5、主要安装脚本、java环境脚本
 
 <!--more-->
 
 ## 脚本内容
-1. 主要安装脚本install_tomcat.sh
+**主要安装脚本"install_tomcat.sh"**
+
 ``` bash
 # author: zack
 # date: 2016-07-30
@@ -65,7 +66,9 @@ sed -i "5a CATALINA_HOME=${tomcat_base}" /etc/init.d/tomcat
 chmod 755 /etc/init.d/tomcat
 ```
 
-2. java环境脚本java-env-7u80.sh
+
+**java环境脚本"java-env-7u80.sh"**
+
 ``` bash
 JAVA_HOME=%JREBASE%
 JRE_HOME=${JAVA_HOME}/jre
