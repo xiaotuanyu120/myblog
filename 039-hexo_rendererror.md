@@ -12,8 +12,10 @@ hexo g
 ```
 **错误信息**
 ``` bash
+{% raw %}
 Template render error: (unknown path) [Line 27, Column 80]
   unexpected token: }}
+{% endraw %}
 ```
 
 ## 解决方案
@@ -24,4 +26,6 @@ Template render error: (unknown path) [Line 27, Column 80]
 > Hello {{ sensitive }}
 > {% endraw %}
 
+{% raw %}
 按照官方解决方案，{{  }}和{%  %}这种符号需要用{% raw %} {% endraw %}转义
+{% endraw %}
