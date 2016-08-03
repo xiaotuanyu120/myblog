@@ -102,6 +102,8 @@ tree
 **templates/install_tomcat.sh文件内容**
 ``` bash
 {% raw %}
+cat roles/tomcat_install/templates/install_tomcat.sh
+****
 #!/bin/bash
 
 # author: zack
@@ -138,19 +140,25 @@ sed -i "3a . /etc/init.d/functions" /etc/init.d/tomcat
 sed -i "4a JAVA_HOME=${jre_base}" /etc/init.d/tomcat
 sed -i "5a CATALINA_HOME=${tomcat_base}" /etc/init.d/tomcat
 chmod 755 /etc/init.d/tomcat
+****
 {% endraw %}
 ```
+{% raw %}
 只改动了"# setting for user customize"这些变量设定部分
 拿{{ tomcat85.jre7u80.jre_tar }}举例，{{}}代表了中间的内容是变量，此变量意味着一个tomcat85的dict，包含一个jre7u80的子dict，拿的是其jre_tar这个key对应的值
+{% endraw %}
 
 
 **templates/java-env-7u80.sh文件内容**
 ``` bash
 {% raw %}
+cat roles/tomcat_install/templates/java-env-7u80.sh
+****
 JAVA_HOME={{ tomcat85.jre7u80.java_home }}
 JRE_HOME=${JAVA_HOME}/jre
 PATH=$PATH:${JAVA_HOME}/bin:${JRE_HOME}/bin
 CLASSPATH=${JAVA_HOME}/lib:${JRE_HOME}/lib
+****
 {% endraw %}
 ```
 和上面一样，此处只修改了一个变量设定
