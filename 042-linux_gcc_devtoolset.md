@@ -9,7 +9,7 @@ Red Hat Developer Toolset is distributed as a collection of RPM packages that ca
 
 <!--more-->
 
-## gcc 4.9.2安装方法
+## gcc 4.9.2(devtoolset-3)安装方法
 ``` bash
 # 检查系统版本和gcc版本
 cat /etc/centos-release
@@ -34,7 +34,7 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-## devtoolset-2安装
+## gcc4.8.2(devtoolset-2)安装
 ``` bash
 # 导入软件包证书
 rpm --import http://ftp.scientificlinux.org/linux/scientific/5x/x86_64/RPM-GPG-KEYs/RPM-GPG-KEY-cern
