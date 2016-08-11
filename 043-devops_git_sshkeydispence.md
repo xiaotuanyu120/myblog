@@ -9,6 +9,8 @@ tags: [devops,python]
 - 适配centos6 - 7
 - 适配python2.6 - 3
 
+<!--more-->
+
 ## 使用方法
 ### **1,环境准备**
 
