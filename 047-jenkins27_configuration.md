@@ -1,5 +1,5 @@
 ---
-title: jenkins: 基本配置
+title: jenkins:基本配置
 date: 2016-08-12 15:42:00
 categories: jenkins
 tags: [jenkins,java,linux]
