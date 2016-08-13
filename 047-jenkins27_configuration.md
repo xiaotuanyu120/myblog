@@ -6,7 +6,7 @@ tags: [jenkins,java,linux]
 ---
 ### 安全性配置
 点击侧边栏 -> manage jenkins -> Configure Global Security
-![j1](http://blog.xiao5tech.com/images/047-j1.PNG)
+![j1](http://blog.xiao5tech.com/uploads/047-j1.jpg)
 确保以下选项被勾选
 - enable security 启用安全模块
 - Jenkins’ own user database  使用jenkins自有的用户信息database(禁止注册user)
@@ -16,7 +16,7 @@ tags: [jenkins,java,linux]
 
 ### 插件升级及安装
 点击侧边栏 -> manage jenkins -> Manage Plugins
-![j2](http://blog.xiao5tech.com/images/047-j2.PNG)
+![j2](http://blog.xiao5tech.com/uploads/047-j2.jpg)
 此处可执行多种插件操作
 - 升级查询及升级
 - 卸载
@@ -27,7 +27,7 @@ tags: [jenkins,java,linux]
 这是我接触的第一个jenkins版本，与网上教程不同的是，2.7版本中的jdk、maven、ant等工具的配置从configure system中转移到了Global Tool Configuration中
 
 点击侧边栏 -> manage jenkins -> Global Tool Configuration
-![j3](http://blog.xiao5tech.com/images/047-j3.PNG)
+![j3](http://blog.xiao5tech.com/uploads/047-j3.jpg)
 
 **按照下面操作去获取应该要填写的信息**
 - jdk
@@ -38,12 +38,12 @@ readlink -f /usr/bin/java
 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64/jre/bin/java
 # 所以说，JAVA_HOME的值应该是/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.el6_8.x86_64/jre
 ```
-![j4](http://blog.xiao5tech.com/images/047-j4.PNG)
+![j4](http://blog.xiao5tech.com/uploads/047-j4.jpg)
 需要注意的是，不要勾选install automatically
 
 - git
 
-![j5](http://blog.xiao5tech.com/images/047-j5.PNG)
+![j5](http://blog.xiao5tech.com/uploads/047-j5.jpg)
 如果git命令是在linux系统的PATH变量中，可以只填写git，也可以写git命令的绝对路径
 同样需要注意，不要勾选install automatically
 
@@ -73,7 +73,7 @@ OS name: "linux", version: "2.6.32-431.el6.x86_64", arch: "amd64", family: "unix
 
 # 从输出信息知道，maven_home是/usr/local/maven
 ```
-![j6](http://blog.xiao5tech.com/images/047-j6.PNG)
+![j6](http://blog.xiao5tech.com/uploads/047-j6.jpg)
 
 同样需要注意，不要勾选install automatically
 
