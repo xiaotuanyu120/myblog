@@ -77,4 +77,18 @@ OS name: "linux", version: "2.6.32-431.el6.x86_64", arch: "amd64", family: "unix
 
 同样需要注意，不要勾选install automatically
 
-至此，基本的maven git jdk就配置配置完毕
+### 系统全局配置
+点击侧边栏 -> manage jenkins -> Configure System
+
+**禁用发送给jenkins数据**
+![j7](http://blog.xiao5tech.com/uploads/047-j7.PNG)
+
+**email配置**
+配置发送者的邮件地址
+![j8](http://blog.xiao5tech.com/uploads/047-j8.PNG)
+
+根据上面的发送者邮件地址，来填写相应的smtp地址及帐号信息
+![j9](http://blog.xiao5tech.com/uploads/047-j9.PNG)
+看图中黄色表示提示，测试邮件发送成功
+其实我用了gmail测试失败，因为现在gmail安全限制很多，有时候不会成功
+
