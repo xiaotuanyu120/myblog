@@ -43,6 +43,25 @@ readlink -f /usr/bin/java
 
 - git
 
+``` bash
+# 需要更新git版本到1.7.9以上，不然jenkins2.7.2版本后面会在git认证时报错
+yum install epel-release
+yum install curl-devel expat-devel gettext-devel openssl-devel perl-devel zlib-devel asciidoc xmlto docbook2X
+
+# 下载源码包
+wget https://www.kernel.org/pub/software/scm/git/git-1.8.5.tar.gz
+tar zxf git-1.8.5.tar.gz
+cd git-1.8.5
+make configure
+ ./configure --prefix=/usr
+make
+make install
+
+# 查看版本号
+git --version
+git version 1.8.5
+```
+
 ![j5](http://blog.xiao5tech.com/uploads/047-j5.jpg)
 如果git命令是在linux系统的PATH变量中，可以只填写git，也可以写git命令的绝对路径
 同样需要注意，不要勾选install automatically
@@ -91,4 +110,3 @@ OS name: "linux", version: "2.6.32-431.el6.x86_64", arch: "amd64", family: "unix
 ![j9](http://blog.xiao5tech.com/uploads/047-j9.PNG)
 看图中黄色表示提示，测试邮件发送成功
 其实我用了gmail测试失败，因为现在gmail安全限制很多，有时候不会成功
-
