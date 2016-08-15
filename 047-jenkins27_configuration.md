@@ -53,7 +53,7 @@ wget https://www.kernel.org/pub/software/scm/git/git-1.8.5.tar.gz
 tar zxf git-1.8.5.tar.gz
 cd git-1.8.5
 make configure
- ./configure --prefix=/usr
+./configure --prefix=/usr
 make
 make install
 
