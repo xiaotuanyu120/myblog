@@ -1,6 +1,6 @@
 ---
 title: python替换字符串-实践
-date:2016-08-16 11:24:00
+date: 2016-08-16 11:24:00
 categories: python
 tags: python
 ---
