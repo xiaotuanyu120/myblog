@@ -21,7 +21,7 @@ group_vars目录中的all文件中集中了所有配置
 **安装ansible**
 [ansible安装及基础知识](http://blog.xiao5tech.com/2016/07/26/026-devops_ansible_tutorial/)
 
-<!-more-->
+<!--more-->
 
 **使用说明**
 ``` bash
