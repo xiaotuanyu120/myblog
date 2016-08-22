@@ -32,6 +32,9 @@ sshd
 sysstat
 udev-post
 ```
+
+<!--more-->
+
 可关闭服务
 - abrt，是Automatic Bug Reporting Tool的缩写，用户bug反馈。扩展见[fedora-abrt介绍](https://docs.fedoraproject.org/en-US/Fedora_Draft_Documentation/0.1/html/System_Administrators_Guide/ch-abrt.html)
 - acpid，是Advanced Configuration and PowerInterface缩写，充当了内核与应用程序之间的接口，负责将内核的电源管理事件转发给应用程序。扩展见[fedora-acpi介绍](https://docs.fedoraproject.org/en-US/Fedora/18/html/Power_Management_Guide/acpid.html)
