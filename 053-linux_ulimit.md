@@ -71,7 +71,9 @@ cat /proc/sys/fs/file-nr 
 session    required     /lib64/security/pam_limits.so
 ********************
 ```
-> 
+
+limits.conf的详细说明
+``` bash
 # /etc/security/limits.conf
 #
 #Each line describes a limit for a user in the form:
@@ -112,7 +114,7 @@ session    required     /lib64/security/pam_limits.so
 #
 #<domain>      <type>  <item>         <value>
 #
-> 
+
 #*               soft    core            0
 #*               hard    rss             10000
 #@student        hard    nproc           20
@@ -120,8 +122,9 @@ session    required     /lib64/security/pam_limits.so
 #@faculty        hard    nproc           50
 #ftp             hard    nproc           0
 #@student        -       maxlogins       4
-> 
+
 # End of file
+```
 
 **通过ulimit命令来修改**
 ``` bash
