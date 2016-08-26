@@ -41,7 +41,7 @@ vim /etc/httpd/conf.d/web.git.conf
 ```
 
 **测试访问**
-![057-测试访问](http://blog.xiao5tech.com/uploads/057.jpg)
+![057-测试访问](http://blog.xiao5tech.com/uploads/057.png)
 
 
 ## 错误解决
