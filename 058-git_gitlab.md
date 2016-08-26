@@ -21,8 +21,12 @@ yum install gitlab-ce
 
 gitlab-ctl reconfigure
 ```
+<!--more-->
 
 ## 测试访问
 0、在浏览器中访问服务器ip
 1、第一个页面是给root用户配置一个密码
 2、使用root登陆
+
+**页面效果**
+![058-page](http://blog.xiao5tech.com/uploads/058.png)
