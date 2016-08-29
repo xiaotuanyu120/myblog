@@ -5,7 +5,12 @@ categories: fedora
 tags: [fedora, genymotion, android]
 ---
 ## 安装virtualbox
-- 在virtualbox官网下载最新virtualbox的rpm包，并安装
+在virtualbox官网下载最新virtualbox的rpm包，并安装
+``` bash
+sudo dnf install ./VirtualBox-5.1-5.1.4_110228_fedora24-1.x86_64.rpm
+```
+
+<!--more-->
 
 ## 安装genymotion
 
