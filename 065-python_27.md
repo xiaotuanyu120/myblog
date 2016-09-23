@@ -40,7 +40,7 @@ alias python='python2.7'
 . /root/.bashrc
 ```
 
-## 检查命令
+### 检查命令
 ``` bash
 which python
 python --version
