@@ -168,7 +168,6 @@ Database changed
 
 MySQL [example]> create table persons ( age int(2), name varchar(10) );
 Query OK, 0 rows affected (0.05 sec)
-```
 
 # 使用user测试只读
 MySQL [(none)]> use example
