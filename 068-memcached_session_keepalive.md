@@ -2,7 +2,7 @@
 title: memcached会话保持
 date: 2016-09-23 15:30:00
 categories: linux
-tags: [memcached,session]
+tags: [memcached,session,tomcat,nginx]
 ---
 ## 环境准备
 三台主机
