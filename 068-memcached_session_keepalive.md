@@ -18,6 +18,7 @@ tomcat: 6
 memcached: 1.4.4
 MSM: 1.8.2
 
+<!--more-->
 
 ## 环境搭建
 ### nginx环境
