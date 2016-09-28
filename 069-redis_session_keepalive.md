@@ -94,6 +94,7 @@ vim /usr/local/tomcat/conf/context.xml
     <Manager className="com.radiadesign.catalina.session.RedisSessionManager" 
      host="47.90.80.156"
      port="6379"
+	 password="mypass"
      database="0"
      maxInactiveInterval="60"
      />
