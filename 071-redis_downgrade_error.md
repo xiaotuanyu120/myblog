@@ -14,5 +14,5 @@ https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1401
 https://gitlab.com/gitlab-org/omnibus-gitlab/commit/824530c76b54f6f9216fde2aaead09dd4584e3cb
 从以上资料中可大概总结到，此问题是因为不同版本的redis采用了不同的rdb版本，预计在3.2.2版本之后解决此问题。
 **参考解决办法**
-1、删除dump.rdb文件，在/etc/redis/下找到此文件，但删除后错误仍在
+1、删除dump.rdb文件，但删除后错误仍在
 2、去配置文件修改dumpfile名称，dbfilename dump2.rdb，此方法可解决
