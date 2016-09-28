@@ -184,7 +184,7 @@ mv tomcat-redis-session-manager-1.2.jar jedis-2.1.0.jar commons-pool-1.6.jar /us
 根据jdk和tomcat版本,需要的jar包完全不一样,不同的jar包版本对应的tomcat Context配置亦不同
 **错误经历**
 按照官方的提示，使用的tomcat-redis-session-manager-1.2-tomcat-6.jar这个发行的包，但是实际使用时，发现主页登录的验证码无法刷出，tomcat报错以下信息：RedisSession.setAttribute(RedisSession.java:56，按照作者的解释，是因为原key和新key皆为空，产生了空指针错误。
-解决办法，jcoleman给发现这个问题的一个哥们单独修改和编译了一个包，因为tomcat6版本太过老旧，作者没有去更新官方的包，https://github.com/jcoleman/tomcat-redis-session-manager/issues/13，换成这个页面上下载的包后，问题得到了完整的解决
+解决办法:jcoleman给发现这个问题的一个哥们单独修改和编译了一个包，因为tomcat6版本太过老旧，作者没有去更新官方的包，https://github.com/jcoleman/tomcat-redis-session-manager/issues/13，换成这个页面上下载的包后，问题得到了完整的解决
 
 
 **启动redis、重启tomcat服务**
