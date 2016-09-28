@@ -11,6 +11,7 @@ tags: [redis,session,tomcat,nginx]
 - redis: 3.2.4
 
 **软件架构**
+
 | 软件名称 | HOST |
 | :---: | :---: |
 | nginx | 192.168.110.4|
@@ -102,6 +103,8 @@ vim /usr/local/tomcat/conf/context.xml
 ```
 Valve要在Manager之前
 注意className，网上的都不一样，需要按照自己下载jar包的版本进行调整
+其中password配置，是对应redis master中的requirepass配置项配置的密码
+
 
 **编写测试程序**
 ``` bash
