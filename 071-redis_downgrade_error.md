@@ -6,8 +6,8 @@ tags: [redis,error]
 ---
 ### 报错过程及信息
 主机上安装了redis3.x版本，后来降级到2.8.x版本，发现直接执行"redis-server 配置文件"无报错，但使用启动脚本启动时报错如下
-"# Can't handle RDB format version 7
-# Fatal error loading the DB: Invalid argument. Exiting."
+"# Can't handle RDB format version 7"
+"# Fatal error loading the DB: Invalid argument. Exiting."
 
 ### 参考资料
 https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1401
