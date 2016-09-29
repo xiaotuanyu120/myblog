@@ -24,4 +24,4 @@ https://gitlab.com/gitlab-org/omnibus-gitlab/commit/824530c76b54f6f9216fde2aaead
 2) "/"
 ```
 或者
-2、去配置文件修改dumpfile名称，dbfilename dump2.rdb，此方法可解决
+2、去配置文件修改dumpfile名称，dbfilename dump2.rdb
