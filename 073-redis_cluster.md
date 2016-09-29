@@ -384,3 +384,63 @@ repl_backlog_first_byte_offset:2
 repl_backlog_histlen:20874
 ```
 值得一提的是，当6380自动接管master身份时，也继承了master的可写配置，也就是说6380由原来的从身份只读状态，转变为了主身份可写状态。而6379在重新启动加入集群时，会默认接管6380原有的身份，也就是从身份只读状态，而这些功能的实现全部是由于sentinel节点提供的。
+
+
+### sentinel管理
+**查看master信息**
+``` bash
+# 用redis-cli连接sentinel的端口
+redis-cli -p 26379
+127.0.0.1:26379> sentinel master mymaster
+ 1) "name"
+ 2) "mymaster"
+ 3) "ip"
+ 4) "192.168.110.5"
+ 5) "port"
+ 6) "6381"
+ 7) "runid"
+ 8) "88460abc58aa7d2e159a29a7fe29f2d64aa72033"
+ 9) "flags"
+10) "master"
+11) "pending-commands"
+12) "0"
+13) "last-ping-sent"
+14) "0"
+15) "last-ok-ping-reply"
+16) "404"
+17) "last-ping-reply"
+18) "404"
+19) "down-after-milliseconds"
+20) "60000"
+21) "info-refresh"
+22) "3270"
+23) "role-reported"
+24) "master"
+25) "role-reported-time"
+26) "8577307"
+27) "config-epoch"
+28) "2"
+29) "num-slaves"
+30) "2"
+31) "num-other-sentinels"
+32) "2"
+33) "quorum"
+34) "2"
+35) "failover-timeout"
+36) "180000"
+37) "parallel-syncs"
+38) "1"
+```
+其中"num-other-sentinels"代表了其他的sentinel节点个数
+"num-slaves"代表了slave节点个数
+
+使用以下两个命令可以看到slaves和sentinels的信息
+SENTINEL slaves mymaster
+SENTINEL sentinels mymaster
+
+**获取当前master信息**
+``` bash
+127.0.0.1:26379> SENTINEL get-master-addr-by-name mymaster
+1) "192.168.110.5"
+2) "6381"
+```
