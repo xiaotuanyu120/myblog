@@ -128,6 +128,23 @@ repl_backlog_first_byte_offset:2
 repl_backlog_histlen:125899
 ```
 
+**从转主的命令**
+``` bash
+127.0.0.1:6380> slaveof no one
+OK
+127.0.0.1:6380> info replication
+# Replication
+role:master
+connected_slaves:0
+master_repl_offset:127944
+repl_backlog_active:0
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:0
+repl_backlog_histlen:0
+# 当然，前提是我们开启了从的写功能
+```
+
+
 ### redis常用配置
 ``` bash
 # 只读配置，不可以在此节点写入key-value
