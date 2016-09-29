@@ -83,7 +83,7 @@ requirepass customized_pass
 ``` bash
 vim /etc/redis/6380.conf
 ******************************
-slaveof 47.90.80.156 6379
+slaveof 192.168.110.4 6379
 
 # 此配置需要去tomcat配置中增加password配置，否则会报错
 masterauth customized_pass
@@ -114,6 +114,18 @@ redis-cli -p 6380
 127.0.0.1:6380> KEYS *
 1) "fork"
 2) "good"
+
+# master上检查主从状态
+127.0.0.1:6379> info replication
+# Replication
+role:master
+connected_slaves:1
+slave0:ip=192.168.110.5,port=6380,state=online,offset=125900,lag=0
+master_repl_offset:125900
+repl_backlog_active:1
+repl_backlog_size:1048576
+repl_backlog_first_byte_offset:2
+repl_backlog_histlen:125899
 ```
 
 ### redis常用配置
