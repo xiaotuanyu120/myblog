@@ -8,7 +8,7 @@ tags: [redis,session,tomcat,nginx]
 **软件版本**
 - nginx: 1.10.1
 - tomcat: 6.0.45
-- redis: 3.2.4
+- redis: 2.8.24
 
 **软件架构**
 
