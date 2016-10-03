@@ -21,11 +21,7 @@ tar zxf Python-2.7.11.tgz
 ``` bash
 cd Python-2.7.11
 ./configure --prefix=/usr/local/py27/
-vim Modules/Setup
-****************************
-## 搜索zlib找到下面一行,去掉注释
-zlib zlibmodule.c -I$(prefix)/include -L$(exec_prefix)/lib -lz
-****************************
+sed -i 's/#.*zlib zlibmodule.c/zlib zlibmodule.c/g' Modules/Setupmake
 make
 make install
 ```
