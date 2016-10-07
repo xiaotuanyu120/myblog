@@ -6,7 +6,9 @@ tags: [python2.7,python]
 ---
 ### 安装环境
 ``` bash
-yum install zip zip-devel openssl openssl-devel -y
+yum install epel-release -y
+yum groupinstall base "Development tools" -y
+yum install gcc gcc-c++ zip zip-devel openssl openssl-devel sqlite-devel -y
 ```
 
 ### py2.7下载&解压缩
@@ -21,7 +23,7 @@ tar zxf Python-2.7.11.tgz
 ``` bash
 cd Python-2.7.11
 ./configure --prefix=/usr/local/py27/
-sed -i 's/#.*zlib zlibmodule.c/zlib zlibmodule.c/g' Modules/Setupmake
+sed -i 's/#.*zlib zlibmodule.c/zlib zlibmodule.c/g' Modules/Setup
 make
 make install
 ```
@@ -47,7 +49,7 @@ python --version
 ### 问题
 **问题描述:**
 安装pip时提示
-zipimport.ZipImportError: can't decompress data; zlib not available 
+zipimport.ZipImportError: can't decompress data; zlib not available
 
 **解决方法:**
 重新编译
