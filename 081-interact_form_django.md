@@ -5,8 +5,8 @@ categories: python
 tags: [python,django,jquery,ajax]
 ---
 ### 背景介绍
-使用django创建一个自动化运维系统，希望在页面上创建两个<select>标签，实现级联的效果，
-即第二个<select>中的内容是由第一个<select>标签的选择所决定的。
+使用django创建一个自动化运维系统，希望在页面上创建两个\<select\>标签，实现级联的效果，
+即第二个\<select\>中的内容是由第一个\<select\>标签的选择所决定的。
 
 **可参照选择省份，然后在选择城市的那种级联效果**
 
@@ -15,8 +15,8 @@ tags: [python,django,jquery,ajax]
 最终使用的解决方案是：
 （此处以brand和host为例，每个brand有多个host）
 - django的models来创建form
-- django的views来从models的form中获取brand，并渲染到第一个<select>中供用户选择
-- 当用户选择了brand后，jquery+ajax动态的把用户的选择发送到views中处理，并获取返回数据，并将其渲染到第二个<select>中
+- django的views来从models的form中获取brand，并渲染到第一个\<select\>中供用户选择
+- 当用户选择了brand后，jquery+ajax动态的把用户的选择发送到views中处理，并获取返回数据，并将其渲染到第二个\<select\>中
 
 ### django的models.py内容
 ``` python
@@ -164,7 +164,51 @@ def form_interaction(request):
 <script src={% static "devops/js/bootstrap.min.js" %}></script>
 
 
-<!--jquery & ajax 部分-->
+<!--form 部分-->
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1>TOMCAT HANDLER</h1>
+      <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label class="control-label" for="selbrand">Brand</label>
+          <select class="form-control" id="selbrand" name="selbrand">
+            {% for brand in brands %}
+            <option>{{ brand }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="selhost">Host</label>
+          <select class="form-control" id="selhost" name="selhost">
+            <option>select brand first</option>
+          </select>
+          <p id="test_p"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label" for="cmd">Command</label>
+          <input type="text" class="form-control" id="cmd" placeholder="Enter cmd" name="cmd" value=''>
+        </div>
+
+        <button type="submit" class="btn btn-primary" name="run" value="Click">run</button>
+      </form>
+      {{ stdout }}
+    </div>
+
+  </div>
+</div>
+<!--这部分重点注意id和class，这是html元素的身份标识-->
+```
+
+### jquery & ajax
+这部分代码也是在前端页面中
+``` javascript
+//jquery & ajax 部分
 <script type="text/javascript">
 $(document).ready(function(){
   $.ajaxSetup({
@@ -210,62 +254,20 @@ $(document).ready(function(){
   });
 });
 </script>
-<!--
-此部分最为核心
-$(document).ready(function(){}含义是等待整个页面文档加载完成之后再去执行function
 
-$.ajaxSetup()含义是ajax的预配置，此段代码解决了csrf_token(django的中间件)认证的问题，否则ajax的post会报403
-
-$("#selbrand").change(function(){$.ajax()}含义是当id为selbrand的部分发生了改变(第一个select发生改变)，
-则执行()之内的函数。
-  首先，取得selbrand的值，组合成dict数据形式，用ajax POST到"/form_interaction/"。
-  然后，success: function(host){}，含义为当post的结果是success(服务端未发生任何错误)时，执行{}内命令
-    其中的host为传入的参数，名称和views中的form_interaction函数return的值一致
-    首先ajax清空selhost(第二个select)的内容，然后再增加一条"<option>请选择主机</option>"
-    最后，$.each(host,function(i){}，含义为传入host，用each进行循环执行function()，i为每次拿出的变量，
-      实际含义即把返回的host列表，每一项都以"<option>host[i]</option>"增加到<select>中
--->
-
-
-<!--form 部分-->
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <h1>TOMCAT HANDLER</h1>
-      <form method="POST" action="">
-        {% csrf_token %}
-
-        <div class="form-group">
-          <label class="control-label" for="selbrand">Brand</label>
-          <select class="form-control" id="selbrand" name="selbrand">
-            {% for brand in brands %}
-            <option>{{ brand }}</option>
-            {% endfor %}
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label" for="selhost">Host</label>
-          <select class="form-control" id="selhost" name="selhost">
-            <option>select brand first</option>
-          </select>
-          <p id="test_p"></p>
-        </div>
-
-        <div class="form-group">
-          <label class="control-label" for="cmd">Command</label>
-          <input type="text" class="form-control" id="cmd" placeholder="Enter cmd" name="cmd" value=''>
-        </div>
-
-        <button type="submit" class="btn btn-primary" name="run" value="Click">run</button>
-      </form>
-      {{ stdout }}
-    </div>
-
-  </div>
-</div>
-<!--这部分重点注意id和class，这是html元素的身份标识-->
+// 此部分最为核心
+// $(document).ready(function(){}含义是等待整个页面文档加载完成之后再去执行function
+//
+// $.ajaxSetup()含义是ajax的预配置，此段代码解决了csrf_token(django的中间件)认证的问题，否则ajax的post会报403
+//
+// $("#selbrand").change(function(){$.ajax()}含义是当id为selbrand的部分发生了改变(第一个select发生改变)，
+// 则执行()之内的函数。
+//   首先，取得selbrand的值，组合成dict数据形式，用ajax POST到"/form_interaction/"。
+//   然后，success: function(host){}，含义为当post的结果是success(服务端未发生任何错误)时，执行{}内命令
+//     其中的host为传入的参数，名称和views中的form_interaction函数return的值一致
+//     首先ajax清空selhost(第二个select)的内容，然后再增加一条"<option>请选择主机</option>"
+//     最后，$.each(host,function(i){}，含义为传入host，用each进行循环执行function()，i为每次拿出的变量，
+//       实际含义即把返回的host列表，每一项都以"<option>host[i]</option>"增加到<select>中
 ```
 
 ### django的urls.py内容
@@ -281,5 +283,5 @@ urlpatterns = [
     url(r'^form_interaction/$', views.form_interaction, name='form_interaction'),
 ]
 
-# 当访问/from_interaction/时，把请求发送给views.py的form_interaction函数
+# 当访问/from_interaction/时，把请求发送给views.py的form_interaction
 ```
