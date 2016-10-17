@@ -1,5 +1,5 @@
 ---
-title: ansible: host在不同group中，变量覆盖问题
+title: ansible, host在不同group中，变量覆盖问题
 date: 2016-10-17 10:19:00
 categories: devops
 tags: [devops,ansible]
