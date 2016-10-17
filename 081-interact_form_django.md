@@ -18,6 +18,8 @@ tags: [python,django,jquery,ajax]
 - django的views来从models的form中获取brand，并渲染到第一个\<select\>中供用户选择
 - 当用户选择了brand后，jquery+ajax动态的把用户的选择发送到views中处理，并获取返回数据，并将其渲染到第二个\<select\>中
 
+<!--more-->
+
 ### django的models.py内容
 ``` python
 # -*- coding: utf-8 -*-
