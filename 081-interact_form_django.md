@@ -5,8 +5,8 @@ categories: python
 tags: [python,django,jquery,ajax]
 ---
 ### 背景介绍
-使用django创建一个自动化运维系统，希望在页面上创建两个\<select\>标签，实现级联的效果，
-即第二个\<select\>中的内容是由第一个\<select\>标签的选择所决定的。
+使用django创建一个自动化运维系统，希望在页面上创建两个select标签，实现级联的效果，
+即第二个select中的内容是由第一个select标签的选择所决定的。
 
 **可参照选择省份，然后在选择城市的那种级联效果**
 
@@ -15,8 +15,8 @@ tags: [python,django,jquery,ajax]
 最终使用的解决方案是：
 （此处以brand和host为例，每个brand有多个host）
 - django的models来创建form
-- django的views来从models的form中获取brand，并渲染到第一个\<select\>中供用户选择
-- 当用户选择了brand后，jquery+ajax动态的把用户的选择发送到views中处理，并获取返回数据，并将其渲染到第二个\<select\>中
+- django的views来从models的form中获取brand，并渲染到第一个select中供用户选择
+- 当用户选择了brand后，jquery+ajax动态的把用户的选择发送到views中处理，并获取返回数据，并将其渲染到第二个select中
 
 <!--more-->
 
