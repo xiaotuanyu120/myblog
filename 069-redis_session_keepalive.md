@@ -59,6 +59,7 @@ service nginx restart
 # 需要注册oracle帐号才能在下面下载
 http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase6-419409.html
 chmod u+x jre-6u45-linux-x64.bin
+sh jre-6u45-linux-x64.bin
 mv jre1.6.0_45 /usr/local/
 ln -s /usr/local/jre1.6.0_45/ /usr/local/jdk
 vi /etc/profile.d/java-env.sh
@@ -92,7 +93,7 @@ vim /usr/local/tomcat/conf/server.xml
 vim /usr/local/tomcat/conf/context.xml
 ******************************
     <Valve className="com.radiadesign.catalina.session.RedisSessionHandlerValve"/>
-    <Manager className="com.radiadesign.catalina.session.RedisSessionManager" 
+    <Manager className="com.radiadesign.catalina.session.RedisSessionManager"
      host="47.90.80.156"
      port="6379"
 	 password="mypass"
@@ -142,7 +143,7 @@ vim index.jsp
 **安装redis**
 ``` bash
 wget http://download.redis.io/releases/redis-2.8.24.tar.gz
-tar zxf redis-2.8.24.tar.gz 
+tar zxf redis-2.8.24.tar.gz
 cd redis-2.8.24
 make
 make install
@@ -154,7 +155,7 @@ cp utils/redis_init_script /etc/init.d/redis
 vi /etc/init.d/redis
 ******************************
 # 在第2行添加
-#chkconfig: 2345 80 90 
+#chkconfig: 2345 80 90
 
 # 修改配置文件位置
 CONF="/etc/redis/${REDISPORT}.conf"
